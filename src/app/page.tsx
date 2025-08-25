@@ -10,13 +10,15 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#18181b] via-[#23232a] to-[#101014] py-12 px-2 flex justify-center items-center font-sans">
       <div className="flex flex-col w-full max-w-6xl">
-        <DownloadCV />
         <div className="flex flex-col md:flex-row gap-8 w-full">
           {/* Panel lateral */}
           <aside className="md:w-1/3 w-full bg-gradient-to-br from-[#23232a] to-[#18181b] rounded-3xl shadow-2xl p-8 flex flex-col items-center gap-8 border border-yellow-500">
             <ProfileHeader />
             <div className="w-full">
               <ContactInfo />
+            </div>
+            <div className="w-full">
+              <DownloadCV />
             </div>
           </aside>
           {/* Panel principal */}

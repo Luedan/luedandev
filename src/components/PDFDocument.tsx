@@ -70,13 +70,7 @@ export default function CVDocument() {
         </View>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Contacto</Text>
-          <Text style={styles.text}>Teléfono: (315) 309 6672</Text>
-          <Text style={styles.text}>Email: atencia17@gmail.com</Text>
-          <Text style={styles.text}>
-            Dirección: Carrera 49C #75-14 Apto. 1, Barranquilla
-          </Text>
-          <Text style={styles.text}>Nacionalidad: Venezolano</Text>
-          <Text style={styles.text}>PPT: 5.234.103</Text>
+          <Text style={styles.text}>Email: luedandev@gmail.com</Text>
           <Text style={styles.link}>LinkedIn: linkedin.com/in/luedand2</Text>
           <Text style={styles.link}>GitHub: github.com/Luedan</Text>
         </View>
