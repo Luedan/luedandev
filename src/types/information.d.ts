@@ -49,6 +49,7 @@ export type PersonalInfo = {
   dni?: string;
   address?: string;
   website?: string;
+  aboutMe?: string;
 };
 
 export type InformationState = {

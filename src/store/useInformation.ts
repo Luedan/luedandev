@@ -3,7 +3,7 @@ import { InformationState } from "@/types/information";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-const useInformation = create<InformationState>()(() => ({
+export const useInformation = create<InformationState>()((set) => ({
   language: "es",
   personalInfo: {
     name: "Luis Atencia",
@@ -11,6 +11,7 @@ const useInformation = create<InformationState>()(() => ({
     picture: "",
     birthDate: "1995-08-10",
     website: "https://luedan.dev",
+    aboutMe: `He desempeñado un papel clave en el desarrollo y análisis de múltiples proyectos, aportando experiencia técnica y habilidades estratégicas. He mantenido y optimizado aplicaciones en producción, garantizando su rendimiento y eficiencia a largo plazo. Como mentor, impulsé el crecimiento profesional y la productividad de varios equipos. Además, lideré investigaciones para la implementación de nuevas tecnologías, mejorando los procesos de desarrollo. También contribuí activamente a la definición de objetivos estratégicos y a la dirección general de la empresa.`,
   },
   contactInfo: [
     { type: "email", value: "luedandev@gmail.com" },
@@ -56,8 +57,8 @@ const useInformation = create<InformationState>()(() => ({
   ],
   educationInfo: [
     {
-      degree: "Ingeniería en Sistemas",
-      fieldOfStudy: "Desarrollo de Software",
+      degree: "Ingeniería de Sistemas",
+      // fieldOfStudy: "Desarrollo de Software",
       institution:
         "Universidad Nacional Experimental Politécnica de las Fuerzas Armadas",
       startDate: "2014-09-26",
@@ -111,5 +112,3 @@ const useInformation = create<InformationState>()(() => ({
     },
   ],
 }));
-
-export const useInformationStore = persist(useInformation, { name: "information" });
