@@ -1,4 +1,4 @@
-export type lang = "es" | "en";
+export type lang = "ES" | "EN";
 
 export type ContactInfo = Array<{
   type: "email" | "phone" | "linkedin" | "github" | "website";
@@ -65,6 +65,7 @@ export type InformationState = {
 
 export type Information = {
   language: lang;
+  setLanguage: (lang: lang) => void;
   spanish: InformationState;
   english: InformationState;
 }

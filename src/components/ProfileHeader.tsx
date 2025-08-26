@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import { getInformationByLanguage, useInformation } from "@/store/useInformation";
-import { PersonalInfo } from '../types/information';
+import Image from "next/image";
 
 export default function ProfileHeader() {
   const lang = useInformation((state) => state.language);

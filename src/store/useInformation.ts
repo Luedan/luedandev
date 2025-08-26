@@ -4,7 +4,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 const spanishInformation: InformationState = {
-  language: "es",
+  language: "ES",
   personalInfo: {
     name: "Luis Atencia",
     title: "Líder Técnico - Desarrollador Full Stack",
@@ -114,7 +114,7 @@ const spanishInformation: InformationState = {
 };
 
 const englishInformation: InformationState = {
-  language: "en",
+  language: "EN",
   personalInfo: {
     name: "Luis Atencia",
     title: "Technical Lead - Full Stack Developer",
@@ -226,7 +226,8 @@ const englishInformation: InformationState = {
 export const useInformation = create<Information>()(
   persist(
     (set) => ({
-      language: "es",
+      language: "ES",
+      setLanguage: (lang: lang) => set({ language: lang }),
       spanish: spanishInformation,
       english: englishInformation,
     }),
@@ -235,5 +236,5 @@ export const useInformation = create<Information>()(
 );
 
 export const getInformationByLanguage = (language: lang) => {
-  return useInformation.getState()[language === "es" ? "spanish" : "english"];
+  return useInformation.getState()[language === "ES" ? "spanish" : "english"];
 };

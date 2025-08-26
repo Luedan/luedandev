@@ -1,16 +1,17 @@
+import { AboutMe } from "@/components/AboutMe";
 import ContactInfo from "@/components/ContactInfo";
-import DownloadCV from "@/components/DownloadCV";
 import Courses from "@/components/Courses";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ProfileHeader from "@/components/ProfileHeader";
 import Skills from "@/components/Skills";
-import { AboutMe } from "@/components/AboutMe";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#18181b] via-[#23232a] to-[#101014] py-12 px-2 flex justify-center items-center font-sans">
       <div className="flex flex-col w-full max-w-6xl">
+        <LanguageSwitcher />
         <div className="flex flex-col md:flex-row gap-8 w-full">
           {/* Panel lateral */}
           <aside className="md:w-1/3 w-full bg-gradient-to-br from-[#23232a] to-[#18181b] rounded-3xl shadow-2xl p-8 flex flex-col items-center gap-8 border border-yellow-500">

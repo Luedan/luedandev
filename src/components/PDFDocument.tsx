@@ -1,11 +1,12 @@
 "use client";
+/* eslint-disable jsx-a11y/alt-text */
 import {
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-  Image,
+    Document,
+    Image,
+    Page,
+    StyleSheet,
+    Text,
+    View,
 } from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
@@ -56,7 +57,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
 });
-
 export default function CVDocument() {
   return (
     <Document>
