@@ -1,5 +1,6 @@
 "use client";
 import { useInformation } from "@/store/useInformation";
+import SkillBar from "./SkillBar";
 
 export default function Skills() {
   const skillsInfo = useInformation((state) => state.skillsInfo);
@@ -9,22 +10,26 @@ export default function Skills() {
       <h2 className="text-lg font-bold text-yellow-400 mb-2">Habilidades</h2>
       <div>
         <h3 className="font-semibold text-yellow-300">Técnicas</h3>
-        <ul className="list-disc ml-6 text-gray-200 text-sm">
-          {skillsInfo.map((skill: any, idx: number) => (
-            <li key={idx}>
-              {skill.skill}
-              <span className="ml-2 text-yellow-400 text-xs font-semibold">{skill.level}</span>
+  <ul className="grid grid-cols-1 gap-0.5 ml-2">
+          {skillsInfo.map((skill, idx) => (
+            <li key={idx} className="flex items-center justify-between gap-2 py-0.5">
+              <span className="font-medium text-gray-200 w-1/2 truncate">{skill.skill}</span>
+              <span className="flex-1 flex justify-end">
+                <SkillBar level={skill.level} />
+              </span>
             </li>
           ))}
         </ul>
       </div>
       <div className="mt-2">
         <h3 className="font-semibold text-yellow-300">Blandas</h3>
-        <ul className="list-disc ml-6 text-gray-200 text-sm">
-          {softSkillsInfo.map((skill: any, idx: number) => (
-            <li key={idx}>
-              {skill.skill}
-              <span className="ml-2 text-yellow-400 text-xs font-semibold">{skill.level}</span>
+  <ul className="grid grid-cols-1 gap-0.5 ml-2">
+          {softSkillsInfo.map((skill, idx) => (
+            <li key={idx} className="flex items-center justify-between gap-2 py-0.5">
+              <span className="font-medium text-gray-200 w-1/2 truncate">{skill.skill}</span>
+              <span className="flex-1 flex justify-end">
+                <SkillBar level={skill.level} />
+              </span>
             </li>
           ))}
         </ul>
