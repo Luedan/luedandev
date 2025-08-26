@@ -18,9 +18,9 @@ export default function Home() {
             <div className="w-full">
               <ContactInfo />
             </div>
-            <div className="w-full">
+            {/* <div className="w-full">
               <DownloadCV />
-            </div>
+            </div> */}
           </aside>
           {/* Panel principal */}
           <section className="md:w-2/3 w-full bg-gradient-to-br from-[#23232a] to-[#101014] rounded-3xl shadow-2xl p-10 flex flex-col gap-8 border border-gray-800">
