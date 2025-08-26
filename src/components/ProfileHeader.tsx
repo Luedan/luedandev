@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useInformation } from "@/store/useInformation";
+import { getInformationByLanguage, useInformation } from "@/store/useInformation";
+import { PersonalInfo } from '../types/information';
 
 export default function ProfileHeader() {
-  const personalInfo = useInformation((state) => state.personalInfo);
+  const lang = useInformation((state) => state.language);
+  const personalInfo = getInformationByLanguage(lang)?.personalInfo;
   return (
     <div className="flex flex-col items-center gap-4 py-6">
       <Image

@@ -1,8 +1,9 @@
 'use client';
-import { useInformation } from "@/store/useInformation";
+import { getInformationByLanguage, useInformation } from "@/store/useInformation";
 
 export default function Courses() {
-  const coursesInfo = useInformation((state) => state.coursesInfo);
+  const lang = useInformation((state) => state.language);
+  const coursesInfo = getInformationByLanguage(lang).coursesInfo;
   return (
     <div className="bg-gray-900 rounded-xl p-4 shadow border-l-4 border-yellow-500 mb-4">
       <h2 className="text-lg font-bold text-yellow-400 mb-2">Cursos</h2>

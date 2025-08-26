@@ -1,10 +1,12 @@
 "use client";
-import { useInformation } from "@/store/useInformation";
+import { getInformationByLanguage, useInformation } from "@/store/useInformation";
 import SkillBar from "./SkillBar";
 
 export default function Skills() {
-  const skillsInfo = useInformation((state) => state.skillsInfo);
-  const softSkillsInfo = useInformation((state) => state.softSkillsInfo);
+  const lang = useInformation((state) => state.language);
+  const info = getInformationByLanguage(lang);
+  const softSkillsInfo = info?.softSkillsInfo;
+  const skillsInfo = info?.skillsInfo;
   return (
     <div className="bg-gray-900 rounded-xl p-4 shadow border-l-4 border-yellow-500 mb-4">
       <h2 className="text-lg font-bold text-yellow-400 mb-2">Habilidades</h2>

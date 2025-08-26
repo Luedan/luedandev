@@ -1,6 +1,6 @@
 'use client';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPhoneAlt, FaGlobeAmericas } from 'react-icons/fa';
-import { useInformation } from "@/store/useInformation";
+import { getInformationByLanguage, useInformation } from "@/store/useInformation";
 import { JSX } from 'react';
 
 const iconMap: Record<string, JSX.Element> = {
@@ -12,7 +12,8 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 export default function ContactInfo() {
-  const contactInfo = useInformation(state => state.contactInfo);
+  const lang = useInformation((state) => state.language);
+  const contactInfo = getInformationByLanguage(lang)?.contactInfo;
   return (
     <div className="flex flex-col gap-3 w-full">
       {contactInfo.map((contact: { type: string; value: string }, idx: number) => (

@@ -62,3 +62,9 @@ export type InformationState = {
   educationInfo: EducationInfo;
   coursesInfo: CoursesInfo;
 };
+
+export type Information = {
+  language: lang;
+  spanish: InformationState;
+  english: InformationState;
+}
