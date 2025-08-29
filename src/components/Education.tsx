@@ -1,12 +1,14 @@
 'use client';
 import { getInformationByLanguage, useInformation } from "@/store/useInformation";
+import { getWordsByLanguage } from "@/utils/constants";
 
 export default function Education() {
   const lang = useInformation((state) => state.language);
   const educationInfo = getInformationByLanguage(lang)?.educationInfo;
+  const words = getWordsByLanguage(lang);
   return (
     <div className="bg-gray-900 rounded-xl p-4 shadow border-l-4 border-yellow-500 mb-4">
-      <h2 className="text-lg font-bold text-yellow-400 mb-2">Educación</h2>
+      <h2 className="text-lg font-bold text-yellow-400 mb-2">{words.education}</h2>
       {educationInfo.map((edu, idx: number) => (
         <div key={idx} className="mb-4">
           <p className="text-yellow-300 font-semibold text-base">
